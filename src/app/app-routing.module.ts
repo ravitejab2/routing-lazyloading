@@ -9,13 +9,10 @@ const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'/home'},
   {path:'home',component:HomeComponent},
   {path:'downloads',component:DownloadsComponent},
-  {path:'friends',
-  component:FriendsComponent},
-  {path:'friends',children:[
-    {path:'friend/:friendname',component:FriendComponent}
-  ]
-  }
-
+  {path: 'friends',  
+  
+  loadChildren: () => import('./module/friends/friends.module')
+  .then(m => m.FriendsModule) }
 ];
 
 @NgModule({
