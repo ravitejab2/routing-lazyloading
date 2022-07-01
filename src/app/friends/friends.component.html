@@ -1,0 +1,7 @@
+<p>friends works!</p>
+<br>
+<div *ngFor= "let friendname of names">
+    
+    <a routerLink="/friends/friend/{{friendname}}">{{friendname}}</a>
+</div>
+<router-outlet></router-outlet>
