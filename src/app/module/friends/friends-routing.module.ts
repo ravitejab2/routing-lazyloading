@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FriendComponent } from 'src/app/friends/friend/friend.component';
-import { FriendsComponent } from 'src/app/friends/friends.component';
+import { AuthGuard } from 'src/app/auth.guard';
+import { FriendComponent } from 'src/app/module/friends/friend/friend.component';
+import { FriendsComponent } from 'src/app/module/friends/friends.component';
 
 
 
 const routes: Routes = [
   {path:'',
-  component:FriendsComponent},
+  component:FriendsComponent,canActivate:[AuthGuard]},
   {path:'',children:[
-    {path:'friend/:friendname',component:FriendComponent}
+    {path:'friend/:friendname',component:FriendComponent,canActivate:[AuthGuard]}
   ]
   }
+  
 ];
 
 @NgModule({
