@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthGuard } from 'src/app/auth.guard';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class FriendsComponent implements OnInit {
 
   constructor(private router:Router) { }
 
-  public names:string[]=["ravi","teja","raju","ramu","sai","ramesh","vamsi","krishna","babu","chandu"];
+  public names:string[]=["ravi","Bollineni","teja","raju","ramu","sai","ramesh","vamsi","krishna","babu","chandu"];
 
   ngOnInit(): void {
     
